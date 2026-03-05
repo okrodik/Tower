@@ -80,6 +80,18 @@ namespace Tower
 
             foreach (var enemy in enemies)
                 Console.WriteLine($"{enemy.Name}: Урон={enemy.Damage}, Броня={enemy.Armor}, Здоровье={enemy.Health}, Скорость атака={enemy.AttackSpeed}, Критический урон множитель={enemy.CritDamage}, Шанс крита={enemy.CritChance}, Уклоение={enemy.Evasion}");
+
+            // Создаем коллекцию предметов брони
+            var armors = new List<Armor>();
+            armors.Add(Armor.CreateArmorRareHelmet());    // Редкий шлем
+            armors.Add(Armor.CreateArmorEpicChest());     // Эпическая грудная пластина
+            armors.Add(Armor.CreateArmorLegendaryGloves()); // Легендарные перчатки
+
+            // Перебираем коллекцию и выводим информацию о каждом предмете брони
+            foreach (var armor in armors)
+            {
+                Console.WriteLine($"{armor.Name}: Категория={armor.EquipmentType}, Броня={armor.DefenseBonus}, Вес={armor.Weight}, Дополнительный бонус={armor.AdditionalStatBoost}");
+            }
         }
     }
 }
