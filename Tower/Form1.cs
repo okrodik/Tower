@@ -35,6 +35,8 @@ namespace Tower
 
         private void WindowsSetting()
         {
+            this.Size = new Size(1000, 1000);
+
             panel1.BackColor = Color.AliceBlue;
             this.Controls.Add(panel1);
             panel1.Dock = DockStyle.Fill;
