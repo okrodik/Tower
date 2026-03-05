@@ -86,13 +86,26 @@ namespace Tower
             // Создаем коллекцию предметов брони
             var armors = new List<Armor>();
             armors.Add(Armor.CreateArmorRareHelmet());    // Редкий шлем
-            armors.Add(Armor.CreateArmorEpicChest());     // Эпическая грудная пластина
             armors.Add(Armor.CreateArmorLegendaryGloves()); // Легендарные перчатки
+            armors.Add(Armor.CreateArmorEpicChest());     // Эпическая грудная пластина
+            armors.Add(Armor.CreateArmorLegendaryChest()); // Легендарные перчатки
 
             // Перебираем коллекцию и выводим информацию о каждом предмете брони
             foreach (var armor in armors)
             {
-                Console.WriteLine($"{armor.Name}: Категория={armor.EquipmentType}, Броня={armor.DefenseBonus}, Вес={armor.Weight}, Дополнительный бонус={armor.AdditionalStatBoost}");
+                Console.WriteLine($"{armor.Name}: Редкость={armor.Rarity}, Категория={armor.Category}, Защита={armor.BaseEffectValue}, Дополнительный бонус к скорости атаки={armor.StatBoost}");
+            }
+
+            // Создаем коллекцию предметов брони
+            var weapon = new List<Weapon>();
+
+            weapon.Add(Weapon.CreateWeaponEpicAxe());    // Редкий шлем
+            weapon.Add(Weapon.CreateWeaponLegendaryEstoc()); // Легендарные перчатки
+
+            // Перебираем коллекцию и выводим информацию о каждом предмете брони
+            foreach (var armor in armors)
+            {
+                Console.WriteLine($"{armor.Name}: Редкость={armor.Rarity}, Категория={armor.Category}, Урон={armor.BaseEffectValue}, Шанс к критическому урону={armor.StatBoost}");
             }
         }
     }
