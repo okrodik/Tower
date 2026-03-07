@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Tower
 {
@@ -27,16 +28,23 @@ namespace Tower
         Button btnLut2 = new Button();
         Button btnLut3 = new Button();
 
+        Random random = new Random();
+
+        List<Enemy> enemies = new List<Enemy>();
+
+        Timer timer1 = new Timer();
+        Timer timer2 = new Timer();
+
         public Form1()
         {
             InitializeComponent();
             WindowsSetting();
-            Vivod2();
+            startGame();
         }
 
         private void WindowsSetting()
         {
-            this.Size = new Size(1000, 1000);
+            this.Size = new Size(1280, 720);
 
             panel1.BackColor = Color.AliceBlue;
             this.Controls.Add(panel1);
@@ -71,7 +79,7 @@ namespace Tower
             panel1.Controls.Add(btnLut3);
         }
 
-        private void Vivod() 
+        private void Enemys() 
         {
             var enemies = new List<Enemy>();
 
@@ -109,23 +117,104 @@ namespace Tower
             }
         }
 
-        private void Vivod2()
+        private void Heroes()
         {
             // Создаем героя
-            Hero myHero = new Hero("Игрок", 10, 5, 0.1f, 0.05f);
+            Hero myHero = new Hero("Игрок", 10, 5, 10, 0.1f, 0.2f, 10, 0.05f);
 
             // Создание оружия и брони
             Weapon sword = Weapon.CreateWeaponEpicAxe(); // Низкое качество, небольшая прибавка атаки
             Armor helmet = Armor.CreateArmorEpicChest(); // Минимальное улучшение защиты
+            Weapon sword2 = Weapon.CreateWeaponLegendaryAxe();
 
-            // Используем меч
-            myHero.ChangeEquipment(sword);
-            Console.WriteLine($"Герой экипировал {sword.Name}. Новый урон: {myHero.Damage}");
+    
+            richTextBox.Text += $"Имя героя {myHero.Name}. \n";
+            richTextBox.Text += $"Урон: {myHero.Damage}. \n";
+            richTextBox.Text += $"Жизнь:  {myHero.Health}. \n";
+            richTextBox.Text += $"Скорость атаки: {myHero.AttackSpeed}. \n";
+            richTextBox.Text += $"Множитель критической атаки: {myHero.CritDamage}. \n";
+            richTextBox.Text += $"Шанс критической атаки: {myHero.CritChance}. \n";
+            richTextBox.Text += $"Шанс уклонения:{myHero.Evasion}. \n";
+        }
 
-            // Затем используем шлем
-            myHero.ChangeEquipment(helmet);
-            Console.WriteLine($"Герой экипировал {helmet.Name}. Новая защита: {myHero.Defense}");
 
+        private void startGame()
+        {
+            int x = random.Next(0, 9);
+            Heroes();
+            SelectEnemy(x);
+            
+        }
+
+        private void SelectEnemy(int x)
+        {
+            switch (x)
+            { 
+                case 0:
+                    enemies.Add(Enemy.CreateSkelet());
+                    break;
+                case 1:
+                    enemies.Add(Enemy.CreateGoblin());
+                    break;
+                case 2:
+                    enemies.Add(Enemy.CreateOrk());
+                    break;
+                case 3:
+                    enemies.Add(Enemy.CreateBabayka());
+                    break;
+                case 4:
+                    enemies.Add(Enemy.CreateZombie());
+                    break;
+                case 5:
+                    enemies.Add(Enemy.CreateVampir());
+                    break;
+                case 6:
+                    enemies.Add(Enemy.CreateBossDracon());
+                    break;
+                case 7:
+                    enemies.Add(Enemy.CreateBossTrol());
+                    break;
+                case 8:
+                    enemies.Add(Enemy.CreateBossUnicorn());
+                    break;
+                case 9:
+                    enemies.Add(Enemy.CreateBossAbaahu());
+                    break;
+                default:
+                    break;
+            }
+
+            VivodEnemys(enemies);
+        }
+
+        private void VivodEnemys(List<Enemy> enemi)
+        {
+            foreach (var enemy in enemi)
+            {
+                richTextBox.Text += $"\n{enemy.Name}:\n" +
+                $"Урон={enemy.Damage}\n" +
+                $"Броня={enemy.Armor}\n" +
+                $"Здоровье={enemy.Health}\n" +
+                $"Скорость атаки={enemy.AttackSpeed}\n" +
+                $"Критический урон множитель={enemy.CritDamage}\n" +
+                $"Шанс крита={enemy.CritChance}%\n" +
+                $"Уклонение={enemy.Evasion}";
+            }
+        }
+
+        private void gameToStart()
+        {
+            timer1.Start();
+            timer2.Start();
+        }
+
+        private void WinToEnemy()
+        {
+            
+        }
+
+        private void timer1.Tick()
+        {
 
         }
     }

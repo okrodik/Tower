@@ -13,18 +13,25 @@ namespace Tower
     {
         public string Name { get; set; }
         public int Damage { get; private set; }
-        public int Defense { get; private set; }
-        public float CriticalHitRate { get; private set; }
-        public float EvadeRate { get; private set; }
+        public int Armor { get; private set; }
+        public int Health { get; private set; }
+        public float AttackSpeed { get; private set; }
+        public float CritDamage { get; private set; }
+        public int CritChance { get; private set; }
+        public float Evasion { get; private set; }
+
         public Equipment CurrentEquipment { get; private set; }
 
-        public Hero(string name, int initialDamage, int initialDefense, float criticalHitRate, float evadeRate)
+        public Hero(string name, int initialDamage,int initialHealth, int initialDefense, float initialAttackSpeed, float initialCriticalHitRate, int initialCritChance, float initialEvasion)
         {
             Name = name;
             Damage = initialDamage;
-            Defense = initialDefense;
-            CriticalHitRate = criticalHitRate;
-            EvadeRate = evadeRate;
+            Armor = initialDefense;
+            Health = initialHealth;
+            AttackSpeed = initialAttackSpeed;
+            CritDamage = initialCriticalHitRate;
+            CritChance = initialCritChance;
+            Evasion = initialEvasion;
         }
 
         // Функция для смены снаряжения
@@ -50,12 +57,12 @@ namespace Tower
             {
                 case EquipmentType.Weapon:
                     Damage += equipment.BaseEffectValue;                 // Увеличиваем урон
-                    CriticalHitRate += equipment.BaseEffectValue * 0.01f;// Преобразуем процентный бонус в десятичный коэффициент
+                    CritDamage += equipment.StatBoost * 0.01f;// Преобразуем процентный бонус в десятичный коэффициент
                     break;
 
                 case EquipmentType.Armor:
-                    Defense += equipment.BaseEffectValue;                // Увеличиваем защиту
-                    EvadeRate += equipment.BaseEffectValue * 0.01f;     // Преобразуем процентный бонус в десятичный коэффициент
+                    Armor += equipment.BaseEffectValue;                // Увеличиваем защиту
+                    Evasion += equipment.StatBoost * 0.01f;
                     break;
             }
         }
@@ -67,12 +74,12 @@ namespace Tower
             {
                 case EquipmentType.Weapon:
                     Damage -= CurrentEquipment.BaseEffectValue;                  // Возврат прежнего урона
-                    CriticalHitRate -= CurrentEquipment.BaseEffectValue * 0.01f; // Откатываем процентный бонус
+                    CritDamage -= CurrentEquipment.StatBoost * 0.01f; // Откатываем процентный бонус
                     break;
 
                 case EquipmentType.Armor:
-                    Defense -= CurrentEquipment.BaseEffectValue;                 // Возврат прежней защиты
-                    EvadeRate -= CurrentEquipment.BaseEffectValue * 0.01f;      // Откатываем процентный бонус
+                    Armor -= CurrentEquipment.BaseEffectValue;                 // Возврат прежней защиты
+                    Evasion -= CurrentEquipment.StatBoost * 0.01f;      // Откатываем процентный бонус
                     break;
             }
         }

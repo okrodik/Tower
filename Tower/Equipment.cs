@@ -41,9 +41,9 @@ namespace Tower
         public RarityType Rarity { get; set; }             // Ранг редкости
         public Category Category { get; set; }             // Ранг редкости
         public int BaseEffectValue { get; set; }           // Основное влияние снаряжения (урон или броня)
-        public float StatBoost { get; set; }     // Дополнительный статистический прирост (например, критический шанс)
+        public int StatBoost { get; set; }     // Дополнительный статистический прирост (например, критический шанс)
 
-        public Equipment(string name, EquipmentType type, RarityType rarity, Category category, int effectValue, float statBoost)
+        public Equipment(string name, EquipmentType type, RarityType rarity, Category category, int effectValue, int statBoost)
         {
             Name = name;
             Type = type;
@@ -56,7 +56,7 @@ namespace Tower
 
     class Weapon : Equipment
     {
-        public Weapon(string name, RarityType rarity, Category category, int attackBonus, float statBoost)
+        public Weapon(string name, RarityType rarity, Category category, int attackBonus, int statBoost)
             : base(name, EquipmentType.Weapon, rarity, category, attackBonus, statBoost)
         {
         }
@@ -138,14 +138,14 @@ namespace Tower
 
         public static Weapon CreateWeaponLegendaryAxe()
         {
-            return new Weapon("Легендарный Топор", RarityType.Legendary, Category.Axe, 12, 5);
+            return new Weapon("Легендарный Топор", RarityType.Legendary, Category.Axe, 102, 5);
         }
     }
 
 
     class Armor : Equipment
     {
-        public Armor(string name, RarityType rarity, Category category, int defenseBonus, float dodgeProbability)
+        public Armor(string name, RarityType rarity, Category category, int defenseBonus, int dodgeProbability)
             : base(name, EquipmentType.Armor, rarity, category, defenseBonus, dodgeProbability)
         {
 
