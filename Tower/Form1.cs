@@ -35,6 +35,24 @@ namespace Tower
         Timer timer1 = new Timer();
         Timer timer2 = new Timer();
 
+        string NameHero = "";
+        int DamageHero = 0;
+        int ArmorHero = 0;
+        int HealthHero = 0;
+        float AttackSpeedHero = 0.0f;
+        float CritDamageHero = 0.0f;
+        int CritChanceHero = 0;
+        float EvasionHero = 0;
+
+        string NameEnemy = "";
+        int DamageEnemy = 0;
+        int ArmorEnemy = 0;
+        int HealthEnemy = 0;
+        float AttackSpeedEnemy = 0.0f;
+        float CritDamageEnemy = 0.0f;
+        int CritChanceEnemy = 0;
+        float EvasionEnemy = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -77,6 +95,14 @@ namespace Tower
             panel1.Controls.Add(btnLut1);
             panel1.Controls.Add(btnLut2);
             panel1.Controls.Add(btnLut3);
+
+
+            timer1.Interval = 100;
+            timer2.Interval = 100;
+
+            timer1.Tick += timer1_Tick;
+            timer2.Tick += timer2_Tick;
+
         }
 
         private void Enemys() 
@@ -127,14 +153,23 @@ namespace Tower
             Armor helmet = Armor.CreateArmorEpicChest(); // Минимальное улучшение защиты
             Weapon sword2 = Weapon.CreateWeaponLegendaryAxe();
 
-    
-            richTextBox.Text += $"Имя героя {myHero.Name}. \n";
-            richTextBox.Text += $"Урон: {myHero.Damage}. \n";
-            richTextBox.Text += $"Жизнь:  {myHero.Health}. \n";
-            richTextBox.Text += $"Скорость атаки: {myHero.AttackSpeed}. \n";
-            richTextBox.Text += $"Множитель критической атаки: {myHero.CritDamage}. \n";
-            richTextBox.Text += $"Шанс критической атаки: {myHero.CritChance}. \n";
-            richTextBox.Text += $"Шанс уклонения:{myHero.Evasion}. \n";
+            NameHero = myHero.Name;
+            DamageHero = myHero.Damage;
+            HealthHero = myHero.Health;
+            ArmorHero = myHero.Armor;
+            AttackSpeedHero = myHero.AttackSpeed;
+            CritDamageHero = myHero.CritDamage;
+            CritChanceHero = myHero.CritChance;
+            EvasionHero = myHero.Evasion;
+
+            richTextBox.Text += $"Имя героя {NameHero.ToString()}. \n";
+            richTextBox.Text += $"Урон: {DamageHero.ToString()}. \n";
+            richTextBox.Text += $"Жизнь:  {HealthHero.ToString()}. \n";
+            richTextBox.Text += $"Броня:  {ArmorHero.ToString()}. \n";
+            richTextBox.Text += $"Скорость атаки: {AttackSpeedHero.ToString()}. \n";
+            richTextBox.Text += $"Множитель критической атаки: {CritDamageHero.ToString()}. \n";
+            richTextBox.Text += $"Шанс критической атаки: {CritChanceHero.ToString()}. \n";
+            richTextBox.Text += $"Шанс уклонения:{EvasionHero.ToString()}. \n";
         }
 
 
@@ -143,6 +178,7 @@ namespace Tower
             int x = random.Next(0, 9);
             Heroes();
             SelectEnemy(x);
+            gameToStart();
             
         }
 
@@ -191,14 +227,23 @@ namespace Tower
         {
             foreach (var enemy in enemi)
             {
-                richTextBox.Text += $"\n{enemy.Name}:\n" +
-                $"Урон={enemy.Damage}\n" +
-                $"Броня={enemy.Armor}\n" +
-                $"Здоровье={enemy.Health}\n" +
-                $"Скорость атаки={enemy.AttackSpeed}\n" +
-                $"Критический урон множитель={enemy.CritDamage}\n" +
-                $"Шанс крита={enemy.CritChance}%\n" +
-                $"Уклонение={enemy.Evasion}";
+                NameEnemy = enemy.Name;
+                DamageEnemy = enemy.Damage;
+                HealthEnemy = enemy.Health;
+                ArmorEnemy = enemy.Armor;
+                AttackSpeedEnemy = enemy.AttackSpeed;
+                CritDamageEnemy = enemy.CritDamage;
+                CritChanceEnemy = enemy.CritChance;
+                EvasionEnemy = enemy.Evasion;
+
+                richTextBox.Text += $"Имя врага {NameEnemy.ToString()}. \n";
+                richTextBox.Text += $"Урон: {DamageEnemy.ToString()}. \n";
+                richTextBox.Text += $"Жизнь:  {HealthEnemy.ToString()}. \n";
+                richTextBox.Text += $"Броня:  {ArmorEnemy.ToString()}. \n";
+                richTextBox.Text += $"Скорость атаки: {AttackSpeedEnemy.ToString()}. \n";
+                richTextBox.Text += $"Множитель критической атаки: {CritDamageEnemy.ToString()}. \n";
+                richTextBox.Text += $"Шанс критической атаки: {CritChanceEnemy.ToString()}. \n";
+                richTextBox.Text += $"Шанс уклонения:{EvasionEnemy.ToString()}. \n";
             }
         }
 
@@ -213,7 +258,15 @@ namespace Tower
             
         }
 
-        private void timer1.Tick()
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            HealthEnemy -= DamageHero;
+
+            richTextBox.Text = HealthEnemy.ToString();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
         {
 
         }
