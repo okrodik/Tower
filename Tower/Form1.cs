@@ -31,7 +31,7 @@ namespace Tower
         {
             InitializeComponent();
             WindowsSetting();
-            Vivod();
+            Vivod2();
         }
 
         private void WindowsSetting()
@@ -107,6 +107,26 @@ namespace Tower
             {
                 Console.WriteLine($"{armor.Name}: Редкость={armor.Rarity}, Категория={armor.Category}, Урон={armor.BaseEffectValue}, Шанс к критическому урону={armor.StatBoost}");
             }
+        }
+
+        private void Vivod2()
+        {
+            // Создаем героя
+            Hero myHero = new Hero("Игрок", 10, 5, 0.1f, 0.05f);
+
+            // Создание оружия и брони
+            Weapon sword = Weapon.CreateWeaponEpicAxe(); // Низкое качество, небольшая прибавка атаки
+            Armor helmet = Armor.CreateArmorEpicChest(); // Минимальное улучшение защиты
+
+            // Используем меч
+            myHero.ChangeEquipment(sword);
+            Console.WriteLine($"Герой экипировал {sword.Name}. Новый урон: {myHero.Damage}");
+
+            // Затем используем шлем
+            myHero.ChangeEquipment(helmet);
+            Console.WriteLine($"Герой экипировал {helmet.Name}. Новая защита: {myHero.Defense}");
+
+
         }
     }
 }

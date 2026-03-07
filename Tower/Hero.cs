@@ -7,30 +7,74 @@ using System.Threading.Tasks;
 
 namespace Tower
 {
-    class Hero : Unit
+
+
+    class Hero
     {
         public string Name { get; set; }
-
+        public int Damage { get; private set; }
+        public int Defense { get; private set; }
+        public float CriticalHitRate { get; private set; }
+        public float EvadeRate { get; private set; }
         public Equipment CurrentEquipment { get; private set; }
 
-        // Уровень героя
-        public int Level { get; private set; }
-
-        public Hero(string name = "name", int damage = 5, int armor = 0, int health = 25, float attackSpeed = 1.0f, float critDamage = 1.1f, int critChance = 5, int evasion = 5)
+        public Hero(string name, int initialDamage, int initialDefense, float criticalHitRate, float evadeRate)
         {
-            this.Name = name;
-            this.Damage = damage;
-            this.Armor = armor;
-            this.Health = health;
-            this.AttackSpeed = attackSpeed;
-            this.CritDamage = critDamage;
-            this.CritChance = critChance;
-            this.Evasion = evasion;
+            Name = name;
+            Damage = initialDamage;
+            Defense = initialDefense;
+            CriticalHitRate = criticalHitRate;
+            EvadeRate = evadeRate;
         }
-    }
 
-    class Weapon : Hero()
-    {
+        // Функция для смены снаряжения
+        public void ChangeEquipment(Equipment newEquipment)
+        {
+            if (CurrentEquipment != null)
+            {
+                // Восстанавливаем предыдущие характеристики
+                RevertPreviousEquipmentEffects();
+            }
 
+            // Применяем новое снаряжение
+            ApplyNewEquipment(newEquipment);
+
+            // Запоминаем текущее снаряжение
+            CurrentEquipment = newEquipment;
+        }
+
+        // Внутренняя функция для применения характеристик снаряжения
+        private void ApplyNewEquipment(Equipment equipment)
+        {
+            switch (equipment.Type)
+            {
+                case EquipmentType.Weapon:
+                    Damage += equipment.BaseEffectValue;                 // Увеличиваем урон
+                    CriticalHitRate += equipment.BaseEffectValue * 0.01f;// Преобразуем процентный бонус в десятичный коэффициент
+                    break;
+
+                case EquipmentType.Armor:
+                    Defense += equipment.BaseEffectValue;                // Увеличиваем защиту
+                    EvadeRate += equipment.BaseEffectValue * 0.01f;     // Преобразуем процентный бонус в десятичный коэффициент
+                    break;
+            }
+        }
+
+        // Внутренняя функция для возврата предыдущих характеристик
+        private void RevertPreviousEquipmentEffects()
+        {
+            switch (CurrentEquipment.Type)
+            {
+                case EquipmentType.Weapon:
+                    Damage -= CurrentEquipment.BaseEffectValue;                  // Возврат прежнего урона
+                    CriticalHitRate -= CurrentEquipment.BaseEffectValue * 0.01f; // Откатываем процентный бонус
+                    break;
+
+                case EquipmentType.Armor:
+                    Defense -= CurrentEquipment.BaseEffectValue;                 // Возврат прежней защиты
+                    EvadeRate -= CurrentEquipment.BaseEffectValue * 0.01f;      // Откатываем процентный бонус
+                    break;
+            }
+        }
     }
 }

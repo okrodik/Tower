@@ -56,8 +56,8 @@ namespace Tower
 
     class Weapon : Equipment
     {
-        public Weapon(string name, RarityType rarity, Category category, int attackBonus, float dodgeProbability)
-            : base(name, EquipmentType.Weapon, rarity, category, attackBonus, dodgeProbability)
+        public Weapon(string name, RarityType rarity, Category category, int attackBonus, float statBoost)
+            : base(name, EquipmentType.Weapon, rarity, category, attackBonus, statBoost)
         {
         }
 
