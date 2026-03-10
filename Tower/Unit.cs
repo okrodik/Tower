@@ -80,7 +80,7 @@ namespace Tower
             return new Enemy("Босс Дракон", 20, 10, 1000, 1.0f, 1.4f, 20, 5); // Босс 8го этажа
         }
 
-        public static Enemy CreateBossTrol()
+        public static Enemy CreateBossTroll()
         {
             return new Enemy("Босс троль", 20, 5, 80, 1.0f, 1.4f, 20, 5); // Босс 4го этажа
         }

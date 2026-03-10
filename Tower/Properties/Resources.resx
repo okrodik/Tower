@@ -118,94 +118,124 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="boots_epic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\boots_epic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="boots_legendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\boots_legendary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="boots_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\boots_rare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chest_epic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chest_epic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chest_legendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chest_legendary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chest_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chest_rare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gloves_epic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gloves_epic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gloves_legendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gloves_legendary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gloves_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gloves_rare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="helmet_epic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\helmet_epic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="helmet_legendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\helmet_legendary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="helmet_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\helmet_rare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pants_epic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pants_epic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pants_legendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pants_legendary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pants_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pants_rare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="axe_epic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\axe_epic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="axe_legendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\axe_legendary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="axe_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\axe_rare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dagger_epic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dagger_epic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="dagger_legendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dagger_legendary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dagger_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dagger_rare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="estoc_epic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\estoc_epic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="estoc_legendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\estoc_legendary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="estoc_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\estoc_rare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sword_legendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sword_legendary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="axe_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\axe_rare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sword_epic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sword_epic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sword_legendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sword_legendary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="boots_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boots_rare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sword_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sword_rare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="gloves_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gloves_rare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dagger_epic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dagger_epic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="сlub_epic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\сlub_epic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="сlub_legendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\сlub_legendary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="helmet_epic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\helmet_epic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boots_legendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boots_legendary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pants_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pants_rare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pants_epic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pants_epic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gloves_epic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gloves_epic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="helmet_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\helmet_rare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="сlub_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\сlub_rare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chest_legendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chest_legendary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sword_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sword_rare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pants_legendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pants_legendary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="axe_legendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\axe_legendary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chest_epic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chest_epic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gloves_legendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gloves_legendary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estoc_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\estoc_rare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chest_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chest_rare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="helmet_legendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\helmet_legendary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dagger_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dagger_rare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="axe_epic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\axe_epic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estoc_epic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\estoc_epic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="сlub_legendary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\сlub_legendary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boots_epic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boots_epic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="abaahu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\abaahu.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="babayka" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\babayka.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dracon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dracon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="goblin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\goblin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ork" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ork.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="skelet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\skelet.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="troll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\troll.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unicorn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unicorn.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vampir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vampir.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zombie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zombie.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

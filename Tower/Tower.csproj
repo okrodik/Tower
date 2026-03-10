@@ -173,5 +173,35 @@
   <ItemGroup>
     <None Include="Resources\сlub_rare.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abaahu.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\babayka.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dracon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goblin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ork.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skelet.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\troll.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unicorn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vampir.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zombie.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

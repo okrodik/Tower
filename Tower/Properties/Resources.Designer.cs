@@ -63,6 +63,16 @@ namespace Tower.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap abaahu {
+            get {
+                object obj = ResourceManager.GetObject("abaahu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap axe_epic {
             get {
                 object obj = ResourceManager.GetObject("axe_epic", resourceCulture);
@@ -86,6 +96,16 @@ namespace Tower.Properties {
         internal static System.Drawing.Bitmap axe_rare {
             get {
                 object obj = ResourceManager.GetObject("axe_rare", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap babayka {
+            get {
+                object obj = ResourceManager.GetObject("babayka", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,6 +203,16 @@ namespace Tower.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dracon {
+            get {
+                object obj = ResourceManager.GetObject("dracon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap estoc_epic {
             get {
                 object obj = ResourceManager.GetObject("estoc_epic", resourceCulture);
@@ -243,6 +273,16 @@ namespace Tower.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap goblin {
+            get {
+                object obj = ResourceManager.GetObject("goblin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap helmet_epic {
             get {
                 object obj = ResourceManager.GetObject("helmet_epic", resourceCulture);
@@ -266,6 +306,16 @@ namespace Tower.Properties {
         internal static System.Drawing.Bitmap helmet_rare {
             get {
                 object obj = ResourceManager.GetObject("helmet_rare", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ork {
+            get {
+                object obj = ResourceManager.GetObject("ork", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,6 +353,16 @@ namespace Tower.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap skelet {
+            get {
+                object obj = ResourceManager.GetObject("skelet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sword_epic {
             get {
                 object obj = ResourceManager.GetObject("sword_epic", resourceCulture);
@@ -326,6 +386,46 @@ namespace Tower.Properties {
         internal static System.Drawing.Bitmap sword_rare {
             get {
                 object obj = ResourceManager.GetObject("sword_rare", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap troll {
+            get {
+                object obj = ResourceManager.GetObject("troll", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap unicorn {
+            get {
+                object obj = ResourceManager.GetObject("unicorn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vampir {
+            get {
+                object obj = ResourceManager.GetObject("vampir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zombie {
+            get {
+                object obj = ResourceManager.GetObject("zombie", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tower.Properties;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Tower
@@ -97,8 +98,8 @@ namespace Tower
             panel1.Controls.Add(btnLut3);
 
 
-            timer1.Interval = 100;
-            timer2.Interval = 100;
+            timer1.Interval = 1000;
+            timer2.Interval = 1000;
 
             timer1.Tick += timer1_Tick;
             timer2.Tick += timer2_Tick;
@@ -112,7 +113,7 @@ namespace Tower
             enemies.Add(Enemy.CreateSkelet());
             enemies.Add(Enemy.CreateGoblin());
             enemies.Add(Enemy.CreateOrk());
-            enemies.Add(Enemy.CreateBossTrol());
+            enemies.Add(Enemy.CreateBossTroll());
 
             foreach (var enemy in enemies)
                 Console.WriteLine($"{enemy.Name}: Урон={enemy.Damage}, Броня={enemy.Armor}, Здоровье={enemy.Health}, Скорость атака={enemy.AttackSpeed}, Критический урон множитель={enemy.CritDamage}, Шанс крита={enemy.CritChance}, Уклоение={enemy.Evasion}");
@@ -146,12 +147,14 @@ namespace Tower
         private void Heroes()
         {
             // Создаем героя
-            Hero myHero = new Hero("Игрок", 10, 5, 10, 0.1f, 0.2f, 10, 0.05f);
+            Hero myHero = new Hero("Игрок", 10, 50000, 10, 0.1f, 0.2f, 10, 0.05f);
 
             // Создание оружия и брони
             Weapon sword = Weapon.CreateWeaponEpicAxe(); // Низкое качество, небольшая прибавка атаки
             Armor helmet = Armor.CreateArmorEpicChest(); // Минимальное улучшение защиты
             Weapon sword2 = Weapon.CreateWeaponLegendaryAxe();
+
+            Hero.ChangeEquipment(Weapon.CreateWeaponEpicAxe());
 
             NameHero = myHero.Name;
             DamageHero = myHero.Damage;
@@ -178,7 +181,7 @@ namespace Tower
             int x = random.Next(0, 9);
             Heroes();
             SelectEnemy(x);
-            gameToStart();
+            gameToStartToStop(true);
             
         }
 
@@ -188,33 +191,43 @@ namespace Tower
             { 
                 case 0:
                     enemies.Add(Enemy.CreateSkelet());
+                    pictureEnemy.Image = Resources.skelet;
                     break;
                 case 1:
                     enemies.Add(Enemy.CreateGoblin());
+                    pictureEnemy.Image = Resources.goblin;
                     break;
                 case 2:
                     enemies.Add(Enemy.CreateOrk());
+                    pictureEnemy.Image = Resources.ork;
                     break;
                 case 3:
                     enemies.Add(Enemy.CreateBabayka());
+                    pictureEnemy.Image = Resources.babayka;
                     break;
                 case 4:
                     enemies.Add(Enemy.CreateZombie());
+                    pictureEnemy.Image = Resources.zombie;
                     break;
                 case 5:
                     enemies.Add(Enemy.CreateVampir());
+                    pictureEnemy.Image = Resources.vampir;
                     break;
                 case 6:
                     enemies.Add(Enemy.CreateBossDracon());
+                    pictureEnemy.Image = Resources.dracon;
                     break;
                 case 7:
-                    enemies.Add(Enemy.CreateBossTrol());
+                    enemies.Add(Enemy.CreateBossTroll());
+                    pictureEnemy.Image = Resources.troll;
                     break;
                 case 8:
                     enemies.Add(Enemy.CreateBossUnicorn());
+                    pictureEnemy.Image = Resources.unicorn;
                     break;
                 case 9:
                     enemies.Add(Enemy.CreateBossAbaahu());
+                    pictureEnemy.Image = Resources.abaahu;
                     break;
                 default:
                     break;
@@ -247,28 +260,66 @@ namespace Tower
             }
         }
 
-        private void gameToStart()
+        private void gameToStartToStop(bool trues)
         {
-            timer1.Start();
-            timer2.Start();
+            if (trues)
+            {
+                timer1.Start();
+                timer2.Start();
+            }
+            else
+            {
+                timer1.Stop();
+                timer2.Stop();
+            }
         }
 
         private void WinToEnemy()
         {
-            
+            if (HealthEnemy <= 0)
+            {
+                gameToStartToStop(false);
+                MessageBox.Show("YOU WIN!");
+            }
+
+            if (HealthHero <= 0)
+            {
+                gameToStartToStop(false);
+                MessageBox.Show("YOU LoSE!");
+            }
         }
 
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e) //hero timer
         {
-            HealthEnemy -= DamageHero;
+            if (ArmorEnemy > 0)
+            {
+                ArmorEnemy -= DamageHero;
+            }
+            else
+            {
+                HealthEnemy -= DamageHero;
+            }
 
-            richTextBox.Text = HealthEnemy.ToString();
+            Console.WriteLine(NameEnemy.ToString() + ": " + HealthEnemy.ToString());
+
+            
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
+            if (ArmorHero > 0)
+            {
+                ArmorHero -= DamageEnemy;
+            }
+            else
+            {
+                HealthHero -= DamageEnemy;
+            }
 
+            Console.WriteLine(NameHero.ToString() + ": " + HealthHero.ToString());
+
+            WinToEnemy();
         }
     }
 }
