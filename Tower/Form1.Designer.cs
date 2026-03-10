@@ -28,12 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
-            // 
-            // timer3
-            // 
             // 
             // Form1
             // 
@@ -47,8 +42,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Timer timer3;
     }
 }
 

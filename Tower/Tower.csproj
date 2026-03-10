@@ -68,6 +68,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -81,6 +82,96 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boots_epic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boots_legendary.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boots_rare.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chest_epic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chest_legendary.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chest_rare.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gloves_epic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gloves_legendary.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gloves_rare.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\helmet_epic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\helmet_legendary.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\helmet_rare.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pants_epic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pants_legendary.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pants_rare.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\axe_epic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\axe_legendary.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\axe_rare.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dagger_epic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dagger_legendary.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dagger_rare.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estoc_epic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estoc_legendary.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estoc_rare.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sword_epic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sword_legendary.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sword_rare.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\сlub_epic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\сlub_legendary.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\сlub_rare.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
