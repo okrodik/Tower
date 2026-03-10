@@ -54,6 +54,8 @@ namespace Tower
         int CritChanceEnemy = 0;
         float EvasionEnemy = 0;
 
+        Hero myHero { get; set; }
+
         public Form1()
         {
             InitializeComponent();
@@ -147,14 +149,10 @@ namespace Tower
         private void Heroes()
         {
             // Создаем героя
-            Hero myHero = new Hero("Игрок", 10, 50000, 10, 0.1f, 0.2f, 10, 0.05f);
+            myHero = new Hero("Игрок", 10, 50000, 10, 0.1f, 0.2f, 10, 0.05f);
 
             // Создание оружия и брони
-            Weapon sword = Weapon.CreateWeaponEpicAxe(); // Низкое качество, небольшая прибавка атаки
-            Armor helmet = Armor.CreateArmorEpicChest(); // Минимальное улучшение защиты
-            Weapon sword2 = Weapon.CreateWeaponLegendaryAxe();
-
-            Hero.ChangeEquipment(Weapon.CreateWeaponEpicAxe());
+           
 
             NameHero = myHero.Name;
             DamageHero = myHero.Damage;
@@ -234,6 +232,143 @@ namespace Tower
             }
 
             VivodEnemys(enemies);
+        }
+
+        private void SelectWeapon(int x)
+        {
+            switch (x)
+            {
+                case 0:
+                    var sword = Weapon.CreateWeaponRareSword(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(sword);
+                    break;
+                case 1:
+                    var dagger = Weapon.CreateWeaponRareDagger(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(dagger);
+                    break;
+                case 2:
+                    var club = Weapon.CreateWeaponRareClub(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(club);
+                    break;
+                case 3:
+                    var estoc = Weapon.CreateWeaponRareEstoc(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(estoc);
+                    break;
+                case 4:
+                    var axe = Weapon.CreateWeaponRareAxe(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(axe);
+                    break;
+
+                case 5:
+                    var sword1 = Weapon.CreateWeaponEpicSword(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(sword1);
+                    break;
+                case 6:
+                    var dagger1 = Weapon.CreateWeaponEpicDagger(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(dagger1);
+                    break;
+                case 7:
+                    var club1 = Weapon.CreateWeaponEpicClub(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(club1);
+                    break;
+                case 8:
+                    var estoc1 = Weapon.CreateWeaponEpicEstoc(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(estoc1);
+                    break;
+                case 9:
+                    var axe1 = Weapon.CreateWeaponEpicAxe(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(axe1);
+                    break;
+
+
+                case 10:
+                    var sword2 = Weapon.CreateWeaponLegendarySword(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(sword2);
+                    break;
+                case 11:
+                    var dagger2 = Weapon.CreateWeaponLegendaryDagger(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(dagger2);
+                    break;
+                case 12:
+                    var club2 = Weapon.CreateWeaponLegendaryClub(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(club2);
+                    break;
+                case 13:
+                    var estoc2 = Weapon.CreateWeaponLegendaryEstoc(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(estoc2);
+                    break;
+                case 14:
+                    var axe2 = Weapon.CreateWeaponLegendaryAxe(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(axe2);
+                    break;
+
+
+
+                case 15:
+                    var helmet = Armor.CreateArmorRareHelmet(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(helmet);
+                    break;
+                case 16:
+                    var chest = Armor.CreateArmorRareChest(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(chest);
+                    break;
+                case 17:
+                    var gloves = Armor.CreateArmorRareGloves(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(gloves);
+                    break;
+                case 18:
+                    var pants = Armor.CreateArmorRarePants(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(pants);
+                    break;
+                case 19:
+                    var boots = Armor.CreateArmorRareBoots(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(boots);
+                    break;
+
+                case 20:
+                    var helmet1 = Armor.CreateArmorEpicHelmet(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(helmet1);
+                    break;
+                case 21:
+                    var chest1 = Armor.CreateArmorEpicChest(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(chest1);
+                    break;
+                case 22:
+                    var gloves1 = Armor.CreateArmorEpicGloves(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(gloves1);
+                    break;
+                case 23:
+                    var pants1 = Armor.CreateArmorEpicPants();
+                    break;
+                case 24:
+                    var boots1 = Armor.CreateArmorEpicBoots(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(boots1);
+                    break;
+
+                case 25:
+                    var helmet2 = Armor.CreateArmorEpicHelmet(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(helmet2);
+                    break;
+                case 26:
+                    var chest2 = Armor.CreateArmorLegendaryChest(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(chest2);
+                    break;
+                case 27:
+                    var gloves2 = Armor.CreateArmorLegendaryGloves(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(gloves2);
+                    break;
+                case 28:
+                    var pants2 = Armor.CreateArmorLegendaryPants(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(pants2);
+                    break;
+                case 29:
+                    var boots2 = Armor.CreateArmorLegendaryBoots(); // Низкое качество, небольшая прибавка атаки
+                    myHero.ChangeEquipment(boots2);
+                    break;
+
+                default:
+                    break;
+            }
         }
 
         private void VivodEnemys(List<Enemy> enemi)
