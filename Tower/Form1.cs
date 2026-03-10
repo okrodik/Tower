@@ -151,8 +151,9 @@ namespace Tower
             // Создаем героя
             myHero = new Hero("Игрок", 10, 50000, 10, 0.1f, 0.2f, 10, 0.05f);
 
-            // Создание оружия и брони
-           
+            SelectWeapon(random.Next(0, 29));
+
+
 
             NameHero = myHero.Name;
             DamageHero = myHero.Damage;
