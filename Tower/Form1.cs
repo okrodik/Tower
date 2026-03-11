@@ -36,6 +36,9 @@ namespace Tower
         Timer timer1 = new Timer();
         Timer timer2 = new Timer();
 
+        ProgressBar progressBarHero = new ProgressBar();
+        ProgressBar progressBarEnemy = new ProgressBar();
+
         string NameHero = "";
         int DamageHero = 0;
         int ArmorHero = 0;
@@ -73,11 +76,13 @@ namespace Tower
 
             pictureEnemy.BackColor = Color.Blue;
             pictureEnemy.Location = new Point(Right - SizeHeroEnemy, 0);
-            pictureEnemy.Size = new Size(SizeHeroEnemy, 1000);
+            pictureEnemy.Size = new Size(SizeHeroEnemy, SizeHeroEnemy);
+            pictureEnemy.SizeMode = PictureBoxSizeMode.StretchImage;
 
             pictureHero.BackColor = Color.Red;
             pictureHero.Location = new Point(Left, 0);
-            pictureHero.Size = new Size(SizeHeroEnemy, 1000);
+            pictureHero.Size = new Size(SizeHeroEnemy, SizeHeroEnemy);
+            pictureHero.SizeMode = PictureBoxSizeMode.StretchImage;
 
             richTextBox.BackColor = Color.LemonChiffon;
             richTextBox.Size = new Size(150, 200);
@@ -99,13 +104,20 @@ namespace Tower
             panel1.Controls.Add(btnLut2);
             panel1.Controls.Add(btnLut3);
 
-
             timer1.Interval = 1000;
             timer2.Interval = 1000;
 
             timer1.Tick += timer1_Tick;
             timer2.Tick += timer2_Tick;
 
+            progressBarHero.Location = new Point((SizeHeroEnemy / 2) - (progressBarHero.Width / 2), 250);
+            progressBarHero.BackColor = Color.AntiqueWhite;
+
+            progressBarEnemy.Location = new Point(Right - progressBarEnemy.Width - (progressBarEnemy.Width / 2), 250);
+            progressBarEnemy.BackColor = Color.AntiqueWhite;
+
+            panel1.Controls.Add(progressBarHero);
+            panel1.Controls.Add(progressBarEnemy);
         }
 
         private void Enemys() 
@@ -180,6 +192,12 @@ namespace Tower
             int x = random.Next(0, 9);
             Heroes();
             SelectEnemy(x);
+
+            progressBarHero.Maximum = HealthHero;
+            progressBarEnemy.Maximum = HealthEnemy;
+
+            progressBarHero.Value = HealthHero;
+            progressBarEnemy.Value = HealthEnemy;
             gameToStartToStop(true);
             
         }
@@ -416,6 +434,7 @@ namespace Tower
             {
                 gameToStartToStop(false);
                 MessageBox.Show("YOU WIN!");
+                LutBox();
             }
 
             if (HealthHero <= 0)
@@ -435,6 +454,15 @@ namespace Tower
             else
             {
                 HealthEnemy -= DamageHero;
+
+                if (HealthEnemy < progressBarEnemy.Minimum)
+                {
+                    progressBarEnemy.Value = progressBarEnemy.Minimum;
+                }
+                else
+                {
+                    progressBarEnemy.Value = HealthEnemy;
+                }
             }
 
             Console.WriteLine(NameEnemy.ToString() + ": " + HealthEnemy.ToString());
@@ -451,11 +479,35 @@ namespace Tower
             else
             {
                 HealthHero -= DamageEnemy;
+
+                if (HealthHero < progressBarHero.Minimum)
+                {
+                    progressBarHero.Value = progressBarHero.Minimum;
+                }
+                else
+                {
+                    progressBarHero.Value = HealthHero;
+                }
             }
 
             Console.WriteLine(NameHero.ToString() + ": " + HealthHero.ToString());
 
             WinToEnemy();
+        }
+
+        private void LutBox()
+        {
+            var imageni1 = Resources.estoc_epic;
+            var imageni2 = Resources.axe_epic;
+            var imageni3 = Resources.estoc_legendary;
+
+            Bitmap resizedImage1 = new Bitmap(imageni1, btnLut1.Width, btnLut1.Height);
+            Bitmap resizedImage2 = new Bitmap(imageni2, btnLut2.Width, btnLut2.Height);
+            Bitmap resizedImage3 = new Bitmap(imageni3, btnLut3.Width, btnLut3.Height);
+
+            btnLut1.Image = resizedImage1;
+            btnLut2.Image = resizedImage2;
+            btnLut3.Image = resizedImage3;
         }
     }
 }
