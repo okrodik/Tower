@@ -165,7 +165,7 @@ namespace Tower
         private void Heroes()
         {
             // Создаем героя
-            myHero = new Hero("Игрок", 10, 500, 10, 0.1f, 0.2f, 10, 0.05f);
+            myHero = new Hero("Рузиль", 10, 500, 10, 0.1f, 0.2f, 10, 0.05f);
 
             pictureHero.Image = Resources.hero;
 
@@ -589,6 +589,7 @@ namespace Tower
                 if (iconToWeaponMapping.TryGetValue(weaponName, out int weaponIndex))
                 {
                     SelectWeapon(weaponIndex);
+                    
                     MessageBox.Show($"Вы выбрали: {weaponName} (индекс {weaponIndex})");
 
                     nextEnemy();
