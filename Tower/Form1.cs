@@ -33,9 +33,6 @@ namespace Tower
 
         List<Enemy> enemies = new List<Enemy>();
 
-        Timer timer1 = new Timer();
-        Timer timer2 = new Timer();
-
         ProgressBar progressBarHero = new ProgressBar();
         ProgressBar progressBarEnemy = new ProgressBar();
 
@@ -57,7 +54,7 @@ namespace Tower
         int CritChanceEnemy = 0;
         float EvasionEnemy = 0;
 
-        Hero myHero { get; set; } 
+        Hero myHero { get; set; }
 
         public Form1()
         {
@@ -96,6 +93,10 @@ namespace Tower
             btnLut2.Size = new Size(80, 80);
             btnLut3.Size = new Size(80, 80);
 
+            btnLut1.Click += BtnLut_Click;
+            btnLut2.Click += BtnLut_Click;
+            btnLut3.Click += BtnLut_Click;
+
             panel1.Controls.Add(pictureHero);
             panel1.Controls.Add(pictureEnemy);
             panel1.Controls.Add(richTextBox);
@@ -104,11 +105,11 @@ namespace Tower
             panel1.Controls.Add(btnLut2);
             panel1.Controls.Add(btnLut3);
 
-            timer1.Interval = 1000;
-            timer2.Interval = 1000;
+            timerHero.Interval = 1000;
+            timerEnemy.Interval = 1000;
 
-            timer1.Tick += timer1_Tick;
-            timer2.Tick += timer2_Tick;
+            timerHero.Tick += timer1_Tick;
+            timerEnemy.Tick += timer2_Tick;
 
             progressBarHero.Location = new Point((SizeHeroEnemy / 2) - (progressBarHero.Width / 2), 250);
             progressBarHero.BackColor = Color.AntiqueWhite;
@@ -118,8 +119,6 @@ namespace Tower
 
             panel1.Controls.Add(progressBarHero);
             panel1.Controls.Add(progressBarEnemy);
-
-            
         }
 
         private void Enemys() 
@@ -174,9 +173,7 @@ namespace Tower
             AttackSpeedHero = myHero.AttackSpeed;
             CritDamageHero = myHero.CritDamage;
             CritChanceHero = myHero.CritChance;
-            EvasionHero = myHero.Evasion;
-
-            
+            EvasionHero = myHero.Evasion;      
         }
 
         private void Enemys(List<Enemy> enemi)
@@ -218,7 +215,6 @@ namespace Tower
             richTextBox.Text += $"Шанс уклонения:{EvasionEnemy.ToString()}. \n \n \n";
         }
 
-
         private void startGame()
         {
             int x = random.Next(0, 9);
@@ -232,8 +228,8 @@ namespace Tower
 
             progressBarHero.Value = HealthHero;
             progressBarEnemy.Value = HealthEnemy;
-            gameToStartToStop(true);
-            
+
+            gameToStartToStop(true);    
         }
 
         private void SelectEnemy(int x)
@@ -333,7 +329,6 @@ namespace Tower
                     myHero.ChangeEquipment(axe1);
                     break;
 
-
                 case 10:
                     var sword2 = Weapon.CreateWeaponLegendarySword(); // Низкое качество, небольшая прибавка атаки
                     myHero.ChangeEquipment(sword2);
@@ -354,8 +349,6 @@ namespace Tower
                     var axe2 = Weapon.CreateWeaponLegendaryAxe(); // Низкое качество, небольшая прибавка атаки
                     myHero.ChangeEquipment(axe2);
                     break;
-
-
 
                 case 15:
                     var helmet = Armor.CreateArmorRareHelmet(); // Низкое качество, небольшая прибавка атаки
@@ -422,21 +415,19 @@ namespace Tower
                 default:
                     break;
             }
-        }
-
-       
+        }   
 
         private void gameToStartToStop(bool trues)
         {
             if (trues)
             {
-                timer1.Start();
-                timer2.Start();
+                timerHero.Start();
+                timerEnemy.Start();
             }
             else
             {
-                timer1.Stop();
-                timer2.Stop();
+                timerHero.Stop();
+                timerEnemy.Stop();
             }
         }
 
@@ -449,8 +440,7 @@ namespace Tower
 
                 enemies.Clear();
 
-                nextEnemy();
-                //LutBox();
+                LutBox();
             }
 
             if (HealthHero <= 0)
@@ -460,32 +450,23 @@ namespace Tower
             }
         }
 
-
-
-
-
         private void nextEnemy()
         {
-            int x = random.Next(9);
-            SelectEnemy(x);
+                int x = random.Next(9);
+                SelectEnemy(x);
 
-            Vivod();
+                Vivod();
+
+                progressBarHero.Maximum = HealthHero;
+                progressBarEnemy.Maximum = HealthEnemy;
+
+                progressBarHero.Value = HealthHero;
+                progressBarEnemy.Value = HealthEnemy;
 
 
-            progressBarHero.Maximum = HealthHero;
-            progressBarEnemy.Maximum = HealthEnemy;
-
-            progressBarHero.Value = HealthHero;
-            progressBarEnemy.Value = HealthEnemy;
-
-
-            gameToStartToStop(true);
-            MessageBox.Show("Начинаем?");
+                gameToStartToStop(true);
+                MessageBox.Show("Начинаем?");
         }
-
-
-
-
 
         private void timer1_Tick(object sender, EventArgs e) //hero timer
         {
@@ -537,133 +518,73 @@ namespace Tower
             WinToEnemy();
         }
 
+        // ✅ Словарь для маппинга имен → индексов
         private Dictionary<string, int> iconToWeaponMapping = new Dictionary<string, int>()
         {
-            {"sword_rare", 0},
-            {"dagger_rare", 1},
-            {"club_rare", 2},
-            {"estoc_rare", 3},
-            {"axe_rare", 4},
-
-            {"sword_epic", 5},
-            {"dagger_epic", 6},
-            {"club_epic", 7},
-            {"estoc_epic", 8},
-            {"axe_epic", 9},
-
-            {"sword_legendary", 10},
-            {"dagger_legendary", 11},
-            {"club_legendary", 12},
-            {"estoc_legendary", 13},
-            {"axe_legendary", 14},
-
-            {"helmet_rare", 15},
-            {"chest_rare", 16},
-            {"gloves_rare", 17},
-            {"pants_rare", 18},
-            {"boots_rare", 19},
-
-            {"helmet_epic", 20},
-            {"chest_epic", 21},
-            {"gloves_epic", 22},
-            {"pants_epic", 23},
-            {"boots_epic", 24},
-
-            {"helmet_legendary", 25},
-            {"chest_legendary", 26},
-            {"gloves_legendary", 27},
-            {"pants_legendary", 28},
-            {"boots_legendary", 29}
+            {"sword_rare", 0}, {"dagger_rare", 1}, {"club_rare", 2}, {"estoc_rare", 3}, {"axe_rare", 4},
+            {"sword_epic", 5}, {"dagger_epic", 6}, {"club_epic", 7}, {"estoc_epic", 8}, {"axe_epic", 9},
+            {"sword_legendary", 10}, {"dagger_legendary", 11}, {"club_legendary", 12},
+            {"estoc_legendary", 13}, {"axe_legendary", 14},
+            {"helmet_rare", 15}, {"chest_rare", 16}, {"gloves_rare", 17},
+            {"pants_rare", 18}, {"boots_rare", 19},
+            {"helmet_epic", 20}, {"chest_epic", 21}, {"gloves_epic", 22},
+            {"pants_epic", 23}, {"boots_epic", 24},
+            {"helmet_legendary", 25}, {"chest_legendary", 26}, {"gloves_legendary", 27},
+            {"pants_legendary", 28}, {"boots_legendary", 29}
         };
 
         private void LutBox()
         {
             var icons = new[]
             {
-                Resources.sword_rare,
-                Resources.dagger_rare,
-                Resources.сlub_rare,
-                Resources.estoc_rare,
-                Resources.axe_rare,
-
-                Resources.sword_epic,
-                Resources.dagger_epic,
-                Resources.сlub_epic,
-                Resources.estoc_epic,
-                Resources.axe_epic,
-
-                Resources.sword_legendary,
-                Resources.dagger_legendary,
-                Resources.сlub_legendary,
-                Resources.estoc_legendary,
-                Resources.axe_legendary,
-
-                Resources.helmet_rare,
-                Resources.chest_rare,
-                Resources.gloves_rare,
-                Resources.pants_rare,
-                Resources.boots_rare,
-
-                Resources.helmet_epic,
-                Resources.sword_epic,
-                Resources.gloves_epic,
-                Resources.pants_epic,
-                Resources.boots_epic,
-
-                Resources.helmet_legendary,
-                Resources.chest_legendary,
-                Resources.gloves_legendary,
-                Resources.pants_legendary,
-                Resources.boots_legendary
+                Resources.sword_rare, Resources.dagger_rare, Resources.сlub_rare, Resources.estoc_rare, Resources.axe_rare,
+                Resources.sword_epic, Resources.dagger_epic, Resources.сlub_epic, Resources.estoc_epic, Resources.axe_epic,
+                Resources.sword_legendary, Resources.dagger_legendary, Resources.сlub_legendary, Resources.estoc_legendary, Resources.axe_legendary,
+                Resources.helmet_rare, Resources.chest_rare, Resources.gloves_rare, Resources.pants_rare, Resources.boots_rare,
+                Resources.helmet_epic, Resources.chest_epic, Resources.gloves_epic, Resources.pants_epic, Resources.boots_epic,
+                Resources.helmet_legendary, Resources.chest_legendary, Resources.gloves_legendary, Resources.pants_legendary, Resources.boots_legendary
             };
 
-            var selectedIcons = new[]
-{
-                icons[random.Next(icons.Length)],
-                icons[random.Next(icons.Length)],
-                icons[random.Next(icons.Length)]
-            };
+            var names = icons.Select((icon, index) => iconToWeaponMapping.First(kvp => kvp.Value == index).Key).ToArray();
 
-            var names = new[] { "sword_rare", "dagger_rare", "club_rare", "estoc_rare", "axe_rare",
-                        "sword_epic", "dagger_epic", "club_epic", "estoc_epic", "axe_epic",
-                        "sword_legendary", "dagger_legendary", "club_legendary", "estoc_legendary", "axe_legendary",
-                         "helmet_rare", "chest_rare", "gloves_rare", "pants_rare", "boots_rare",
-                        "helmet_epic", "sword_epic", "gloves_epic", "pants_epic", "boots_epic",
-                        "helmet_legendary", "chest_legendary", "gloves_legendary", "pants_legendary", "boots_legendary"};
+            // ✅ Выбираем 3 УНИКАЛЬНЫХ случайных индекса
+            var selectedIndices = new HashSet<int>();
+            while (selectedIndices.Count < 3)
+                selectedIndices.Add(random.Next(icons.Length));
 
+            var selectedIconIndices = selectedIndices.ToArray();
+            var selectedIcons = selectedIconIndices.Select(i => icons[i]).ToArray();
+            var selectedNames = selectedIconIndices.Select(i => names[i]).ToArray();
 
-            var images = new[]
-            {
-                new Bitmap(selectedIcons[0], btnLut1.Width, btnLut1.Height),
-                new Bitmap(selectedIcons[1], btnLut2.Width, btnLut2.Height),
-                new Bitmap(selectedIcons[2], btnLut3.Width, btnLut3.Height)
-            };
+            // ✅ Освобождаем старые изображения
+            btnLut1.Image?.Dispose();
+            btnLut2.Image?.Dispose();
+            btnLut3.Image?.Dispose();
 
-            btnLut1.Image = images[0];
-            btnLut1.Tag = names.FirstOrDefault(name => Resources.ResourceManager.GetObject(name) == selectedIcons[0]);
+            // Устанавливаем новые изображения
+            btnLut1.Image = new Bitmap(selectedIcons[0], btnLut1.Width - 2, btnLut1.Height - 2);
+            btnLut1.Tag = selectedNames[0];  // ✅ Имя ресурса
 
-            btnLut2.Image = images[1];
-            btnLut2.Tag = names.FirstOrDefault(name => Resources.ResourceManager.GetObject(name) == selectedIcons[1]);
+            btnLut2.Image = new Bitmap(selectedIcons[1], btnLut2.Width - 2, btnLut2.Height - 2);
+            btnLut2.Tag = selectedNames[1];
 
-            btnLut3.Image = images[2];
-            btnLut3.Tag = names.FirstOrDefault(name => Resources.ResourceManager.GetObject(name) == selectedIcons[2]);
-
-
-            btnLut1.Click += BtnLut_Click;
-            btnLut2.Click += BtnLut_Click;
-            btnLut3.Click += BtnLut_Click;
+            btnLut3.Image = new Bitmap(selectedIcons[2], btnLut3.Width - 2, btnLut3.Height - 2);
+            btnLut3.Tag = selectedNames[2];
         }
 
         private void BtnLut_Click(object sender, EventArgs e)
         {
-            Button clickedBtn = (Button)sender;
+            if (sender is Button clickedBtn && clickedBtn.Tag is string weaponName)
+            {
+                // ✅ Получаем индекс из словаря
+                if (iconToWeaponMapping.TryGetValue(weaponName, out int weaponIndex))
+                {
+                    SelectWeapon(weaponIndex);
+                    MessageBox.Show($"Вы выбрали: {weaponName} (индекс {weaponIndex})");
 
-
-            int weaponIndex = Convert.ToInt32(clickedBtn.Tag);
-
-            SelectWeapon(weaponIndex);
-
-            MessageBox.Show($"Вы выбрали оружие с индексом {weaponIndex}");
+                    nextEnemy();
+                }
+            }
         }
     }
 }
