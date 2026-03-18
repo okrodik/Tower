@@ -163,11 +163,9 @@ namespace Tower
         private void Heroes()
         {
             // Создаем героя
-            myHero = new Hero("Игрок", 10, 50000, 10, 0.1f, 0.2f, 10, 0.05f);
+            myHero = new Hero("Игрок", 10, 500, 10, 0.1f, 0.2f, 10, 0.05f);
 
             SelectWeapon(random.Next(0, 29));
-
-
 
             NameHero = myHero.Name;
             DamageHero = myHero.Damage;
@@ -178,6 +176,29 @@ namespace Tower
             CritChanceHero = myHero.CritChance;
             EvasionHero = myHero.Evasion;
 
+            
+        }
+
+        private void Enemys(List<Enemy> enemi)
+        {
+            foreach (var enemy in enemi)
+            {
+                NameEnemy = enemy.Name;
+                DamageEnemy = enemy.Damage;
+                HealthEnemy = enemy.Health;
+                ArmorEnemy = enemy.Armor;
+                AttackSpeedEnemy = enemy.AttackSpeed;
+                CritDamageEnemy = enemy.CritDamage;
+                CritChanceEnemy = enemy.CritChance;
+                EvasionEnemy = enemy.Evasion;
+    
+            }
+        }
+
+        private void Vivod()
+        {
+            richTextBox.Text = "";
+
             richTextBox.Text += $"Имя героя {NameHero.ToString()}. \n";
             richTextBox.Text += $"Урон: {DamageHero.ToString()}. \n";
             richTextBox.Text += $"Жизнь:  {HealthHero.ToString()}. \n";
@@ -185,7 +206,16 @@ namespace Tower
             richTextBox.Text += $"Скорость атаки: {AttackSpeedHero.ToString()}. \n";
             richTextBox.Text += $"Множитель критической атаки: {CritDamageHero.ToString()}. \n";
             richTextBox.Text += $"Шанс критической атаки: {CritChanceHero.ToString()}. \n";
-            richTextBox.Text += $"Шанс уклонения:{EvasionHero.ToString()}. \n";
+            richTextBox.Text += $"Шанс уклонения:{EvasionHero.ToString()}. \n \n \n";
+
+            richTextBox.Text += $"Имя врага {NameEnemy.ToString()}. \n";
+            richTextBox.Text += $"Урон: {DamageEnemy.ToString()}. \n";
+            richTextBox.Text += $"Жизнь:  {HealthEnemy.ToString()}. \n";
+            richTextBox.Text += $"Броня:  {ArmorEnemy.ToString()}. \n";
+            richTextBox.Text += $"Скорость атаки: {AttackSpeedEnemy.ToString()}. \n";
+            richTextBox.Text += $"Множитель критической атаки: {CritDamageEnemy.ToString()}. \n";
+            richTextBox.Text += $"Шанс критической атаки: {CritChanceEnemy.ToString()}. \n";
+            richTextBox.Text += $"Шанс уклонения:{EvasionEnemy.ToString()}. \n \n \n";
         }
 
 
@@ -194,6 +224,8 @@ namespace Tower
             int x = random.Next(0, 9);
             Heroes();
             SelectEnemy(x);
+
+            Vivod();
 
             progressBarHero.Maximum = HealthHero;
             progressBarEnemy.Maximum = HealthEnemy;
@@ -252,7 +284,7 @@ namespace Tower
                     break;
             }
 
-            VivodEnemys(enemies);
+            Enemys(enemies);
         }
 
         private void SelectWeapon(int x)
@@ -392,29 +424,7 @@ namespace Tower
             }
         }
 
-        private void VivodEnemys(List<Enemy> enemi)
-        {
-            foreach (var enemy in enemi)
-            {
-                NameEnemy = enemy.Name;
-                DamageEnemy = enemy.Damage;
-                HealthEnemy = enemy.Health;
-                ArmorEnemy = enemy.Armor;
-                AttackSpeedEnemy = enemy.AttackSpeed;
-                CritDamageEnemy = enemy.CritDamage;
-                CritChanceEnemy = enemy.CritChance;
-                EvasionEnemy = enemy.Evasion;
-
-                richTextBox.Text += $"Имя врага {NameEnemy.ToString()}. \n";
-                richTextBox.Text += $"Урон: {DamageEnemy.ToString()}. \n";
-                richTextBox.Text += $"Жизнь:  {HealthEnemy.ToString()}. \n";
-                richTextBox.Text += $"Броня:  {ArmorEnemy.ToString()}. \n";
-                richTextBox.Text += $"Скорость атаки: {AttackSpeedEnemy.ToString()}. \n";
-                richTextBox.Text += $"Множитель критической атаки: {CritDamageEnemy.ToString()}. \n";
-                richTextBox.Text += $"Шанс критической атаки: {CritChanceEnemy.ToString()}. \n";
-                richTextBox.Text += $"Шанс уклонения:{EvasionEnemy.ToString()}. \n";
-            }
-        }
+       
 
         private void gameToStartToStop(bool trues)
         {
@@ -436,7 +446,11 @@ namespace Tower
             {
                 gameToStartToStop(false);
                 MessageBox.Show("YOU WIN!");
-                LutBox();
+
+                enemies.Clear();
+
+                nextEnemy();
+                //LutBox();
             }
 
             if (HealthHero <= 0)
@@ -445,6 +459,32 @@ namespace Tower
                 MessageBox.Show("YOU LoSE!");
             }
         }
+
+
+
+
+
+        private void nextEnemy()
+        {
+            int x = random.Next(9);
+            SelectEnemy(x);
+
+            Vivod();
+
+
+            progressBarHero.Maximum = HealthHero;
+            progressBarEnemy.Maximum = HealthEnemy;
+
+            progressBarHero.Value = HealthHero;
+            progressBarEnemy.Value = HealthEnemy;
+
+
+            gameToStartToStop(true);
+            MessageBox.Show("Начинаем?");
+        }
+
+
+
 
 
         private void timer1_Tick(object sender, EventArgs e) //hero timer
