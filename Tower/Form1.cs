@@ -119,6 +119,9 @@ namespace Tower
 
             panel1.Controls.Add(progressBarHero);
             panel1.Controls.Add(progressBarEnemy);
+
+            panel1.BackgroundImage = Resources.tower;
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void Enemys() 
@@ -164,8 +167,13 @@ namespace Tower
             // Создаем героя
             myHero = new Hero("Игрок", 10, 500, 10, 0.1f, 0.2f, 10, 0.05f);
 
-            SelectWeapon(random.Next(0, 29));
+            pictureHero.Image = Resources.hero;
 
+            SelectWeapon(random.Next(0, 29));
+        }
+        
+        private void Weaponsss()
+        {
             NameHero = myHero.Name;
             DamageHero = myHero.Damage;
             HealthHero = myHero.Health;
@@ -173,7 +181,7 @@ namespace Tower
             AttackSpeedHero = myHero.AttackSpeed;
             CritDamageHero = myHero.CritDamage;
             CritChanceHero = myHero.CritChance;
-            EvasionHero = myHero.Evasion;      
+            EvasionHero = myHero.Evasion;
         }
 
         private void Enemys(List<Enemy> enemi)
@@ -188,7 +196,6 @@ namespace Tower
                 CritDamageEnemy = enemy.CritDamage;
                 CritChanceEnemy = enemy.CritChance;
                 EvasionEnemy = enemy.Evasion;
-    
             }
         }
 
@@ -415,6 +422,8 @@ namespace Tower
                 default:
                     break;
             }
+
+            Weaponsss();
         }   
 
         private void gameToStartToStop(bool trues)

@@ -313,6 +313,16 @@ namespace Tower.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hero {
+            get {
+                object obj = ResourceManager.GetObject("hero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ork {
             get {
                 object obj = ResourceManager.GetObject("ork", resourceCulture);
@@ -386,6 +396,16 @@ namespace Tower.Properties {
         internal static System.Drawing.Bitmap sword_rare {
             get {
                 object obj = ResourceManager.GetObject("sword_rare", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tower {
+            get {
+                object obj = ResourceManager.GetObject("tower", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
